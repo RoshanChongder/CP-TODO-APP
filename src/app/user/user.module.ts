@@ -6,6 +6,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { UserService } from './services/user.service';
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule
   ],
   providers: [
-    UserService
+    UserService,
+    TranslateModule
   ]
 })
 export class UserModule { }

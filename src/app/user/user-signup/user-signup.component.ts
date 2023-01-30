@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './user-signup.component.html',
   styleUrls: ['./user-signup.component.css']
 })
-export class UserSignupComponent implements OnInit {
+export class UserSignupComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

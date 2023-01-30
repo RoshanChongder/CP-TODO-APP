@@ -1,9 +1,6 @@
 <section class="vh-100">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <!-- <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="./../../../assets/images/loginPageImage.png" class="img-fluid" alt="Sample image">
-            </div> -->
             <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1">
                 <div>
                     <img src="./../../../assets/images/loginPageImage.png" class="img-fluid" alt="Sample image">
@@ -16,7 +13,7 @@
                             class="form-control form-control-lg"
                             [ngClass]="{ 'empty-input': userId.value === ''}"
                             formControlName="userId"
-                            placeholder="Enter a valid email address" 
+                            placeholder="{{ 'login.emailId' | translate }}" 
                         />
                         <!-- Error Meesage -->
                         <span *ngIf="userId.dirty && userId.invalid && formError?.userId && userId.value !== ''" class="error-msg">
@@ -31,7 +28,7 @@
                             class="form-control form-control-lg"
                             [ngClass]="{ 'empty-input': password.value === ''}"
                             formControlName="password" 
-                            placeholder="Enter password"
+                            placeholder="{{ 'login.password' | translate }}"
                         />
                         <!-- Error Message -->
                         <span *ngIf="password.dirty && password.invalid && formError?.password && password.value !== ''" class="error-msg">
@@ -48,18 +45,18 @@
                         <div class="form-check mb-0">
                             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
                             <label class="form-check-label" for="form2Example3">
-                                Remember me
+                                {{ 'login.rememberMe' | translate }}
                             </label>
                         </div>
-                        <a href="#!" class="text-body">Forgot password?</a>
+                        <a href="#!" class="text-body">{{ 'login.forgetPassword' | translate }}</a>
                     </div>
 
                     <div class="text-center mt-4 pt-2">
                         <button type="submit" class="btn btn-primary btn-lg submit-btn" [disabled]="!loginForm.valid">
-                            Login
+                            {{ 'login.loginBtn' | translate }}
                         </button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">
-                            Don't have an account? <a href="#!" class="link-danger">Register</a>
+                            {{ 'login.crateAccount' | translate }} <a href="#!" class="link-danger">{{ 'login.register' | translate }}</a>
                         </p>
                     </div>
                 </form>

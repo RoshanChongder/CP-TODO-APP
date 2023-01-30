@@ -1,0 +1,11 @@
+{
+    "login": {
+      "emailId": "Enter registered email address",
+      "password": "Enter password",
+      "rememberMe": "Remember me",
+      "forgetPassword": "Forget Password?",
+      "loginBtn": "Login",
+      "crateAccount": "Don't have an account?",
+      "register": "Register"
+    }
+  }
