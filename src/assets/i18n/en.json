@@ -1,5 +1,8 @@
 {
     "appComponent": {
       "testMessage": "Login Works!"
+    },
+    "userLogin": {
+      "title": "Login Component Works!"
     }
   }
