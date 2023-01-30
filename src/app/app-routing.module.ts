@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 /* Routing Configuration */
 const routes: Routes = [
-  // { path: '', component: Dashboard, canActivate: . .  }
+  { path: '', redirectTo: "user/login", pathMatch: 'full' },
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
 ];
 
