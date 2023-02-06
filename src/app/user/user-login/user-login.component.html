@@ -1,1 +1,91 @@
-<p>{{ 'userLogin.title' | translate }}</p>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1">
+                <div>
+                    <img src="./../../../assets/images/loginPageImage.png" class="img-fluid" alt="Sample image">
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="logInUser()">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" 
+                            id="userEmail"
+                            class="form-control form-control-lg"
+                            [ngClass]="{ 'empty-input': userId.value === ''}"
+                            formControlName="userId"
+                            placeholder="{{ 'login.emailId' | translate }}" 
+                        />
+                        <!-- Error Meesage -->
+                        <span *ngIf="userId.dirty && userId.invalid && formError?.userId && userId.value !== ''" class="error-msg">
+                            {{ formError.userId?.required ? 'Required Field' : formError.userId?.msg }}
+                        </span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" 
+                            id="userPassword" 
+                            class="form-control form-control-lg"
+                            [ngClass]="{ 'empty-input': password.value === ''}"
+                            formControlName="password" 
+                            placeholder="{{ 'login.password' | translate }}"
+                        />
+                        <!-- Error Message -->
+                        <span *ngIf="password.dirty && password.invalid && formError?.password && password.value !== ''" class="error-msg">
+                            Minimum required length is {{ formError.password?.minlength?.requiredLength }}
+                        </span>
+                        <!-- Password strength -->
+                        <span *ngIf="!password.invalid && password.value !== ''" class="password-strength-msg">
+                            Password strength : <span class="password-strength"> {{ passWordStrength }} </span>
+                        </span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label" for="form2Example3">
+                                {{ 'login.rememberMe' | translate }}
+                            </label>
+                        </div>
+                        <a href="#!" class="text-body">{{ 'login.forgetPassword' | translate }}</a>
+                    </div>
+
+                    <div class="text-center mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg submit-btn" [disabled]="!loginForm.valid">
+                            {{ 'login.loginBtn' | translate }}
+                        </button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">
+                            {{ 'login.crateAccount' | translate }} <a href="#!" class="link-danger">{{ 'login.register' | translate }}</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            Copyright © 2020. All rights reserved.
+        </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </div>
+</section>

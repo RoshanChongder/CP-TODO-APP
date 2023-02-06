@@ -1,8 +1,11 @@
 {
-    "appComponent": {
-      "testMessage": "Login Works!"
-    },
-    "userLogin": {
-      "title": "Login Component Works!"
+    "login": {
+      "emailId": "Enter registered email address",
+      "password": "Enter password",
+      "rememberMe": "Remember me",
+      "forgetPassword": "Forget Password?",
+      "loginBtn": "Login",
+      "crateAccount": "Don't have an account?",
+      "register": "Register"
     }
   }
